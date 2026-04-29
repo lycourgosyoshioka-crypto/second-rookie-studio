@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Second Rookie Studio</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header fade-in">
+    <div class="logo">
+      <span class="logo-icon" aria-hidden="true"></span>
+      Second Rookie Studio
+    </div>
+  </header>
+  <main class="container">
+    <section class="card hero fade-in">
+      <h1>これから広げていきたい事業に、<br>シンプルな仕組みを。</h1>
+      <p>Web制作と、お金の流れを自分で管理できる仕組みづくりをサポートしています。</p>
+      <p>LP制作と収支管理の仕組みづくりを通じて、<br>事業運営と個人の選択を、シンプルに整えます。</p>
+    </section>
+
+    <section class="card fade-in">
+      <h2>Second Rookie Studio</h2>
+      <p>個人で活動するWeb制作・仕組みづくりのためのブランド名です。<br>異なる領域に挑戦し続ける「二度目のルーキー」として、<br>個人でWeb制作と仕組みづくりの支援を行うブランドです。</p>
+    </section>
+
+    <section class="card fade-in">
+      <h2>できること</h2>
+      <div class="grid">
+        <div class="feature">
+          <h3>LP制作</h3>
+          <p>シンプルな構成で売上につながる導線設計を支援します。</p>
+        </div>
+        <div class="feature">
+          <h3>収支管理サポート</h3>
+          <p>継続して管理できる仕組みづくりをサポートします。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="card highlight fade-in">
+      <h2>「わからないまま進む」をなくします。</h2>
+      <p>制作前の認識合わせを徹底し、<br>完成後のズレを防ぎます。</p>
+      <p>ご希望に応じて制作工程も共有し、<br>理解を深めながら進めることが可能です。</p>
+    </section>
+
+    <section class="card fade-in">
+      <h2>こんな方へ</h2>
+      <p>・何を依頼すればいいかわからない<br>・制作会社への依頼に不安がある<br>・知識がなく、一歩踏み出しづらい</p>
+      <p>最初の一歩を、丁寧にサポートします。</p>
+    </section>
+
+    <section class="card highlight fade-in">
+      <h2>発注が、学びになる設計です。</h2>
+      <p>制作工程の共有を通じて理解が深まり、<br>手応えとともに知識が積み重なります。</p>
+      <p>その経験が、次の意思決定や挑戦につながる状態をつくります。</p>
+    </section>
+
+    <section class="card fade-in">
+      <h2>プロフィール</h2>
+      <p>慶應義塾大学卒業後、<br>総合人材サービス企業にて営業職に従事。<br>約5年間、<br>営業活動および数値管理、組織立ち上げを経験。<br>現在はITコンサルタントとして勤務しながら、<br>個人でWeb制作および仕組みづくりの支援を行っています。</p>
+    </section>
+
+    <section class="card contact fade-in">
+      <p>まずはご相談からでも大丈夫です。<br>小さなことでも、お気軽にご連絡ください。</p>
+      <a href="#" class="contact-button">相談してみる</a>
+    </section>
+  </main>
+  <script>
+    const elements = document.querySelectorAll(".fade-in");
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("show");
+        }
+      });
+    }, {
+      threshold: 0.1
+    });
+
+    elements.forEach((el) => observer.observe(el));
+  </script>
+</body>
+</html>
