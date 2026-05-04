@@ -162,6 +162,8 @@ p + p {
 
 .card.services {
   padding: clamp(32px, 4.5vw, 48px);
+  background: linear-gradient(165deg, #ecf4ee 0%, #ffffff 42%);
+  border-color: #cfe0cf;
 }
 
 .card.services h2 {
@@ -185,29 +187,39 @@ p + p {
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: clamp(20px, 3vw, 32px);
   margin-top: 6px;
-  align-items: stretch;
+  /* 行の高さを揃えない＝短文カードに無駄な空白が出ず、4つの「箱」として認識しやすい */
+  align-items: start;
 }
 
 .service-grid > .service-card {
   min-height: 0;
-  height: 100%;
+  width: 100%;
 }
 
 .service-card {
   display: flex;
   flex-direction: column;
-  min-height: 100%;
   padding: clamp(22px, 2.8vw, 30px) clamp(20px, 2.5vw, 26px);
   border-radius: 14px;
-  background: #fafdfb;
-  border: 1px solid var(--line);
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  background: #ffffff;
+  border: 1px solid #c5dcc5;
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.9) inset,
+    0 4px 20px rgba(47, 133, 90, 0.08),
+    0 0 0 1px rgba(47, 133, 90, 0.04);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.service-card:not(.service-card--soon) {
+  border-left: 3px solid var(--accent);
 }
 
 .service-card:hover {
-  border-color: #c8dcc8;
-  box-shadow: 0 4px 14px rgba(47, 133, 90, 0.08);
+  border-color: #a8cfa8;
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.9) inset,
+    0 8px 28px rgba(47, 133, 90, 0.12),
+    0 0 0 1px rgba(47, 133, 90, 0.06);
 }
 
 .service-card__title {
@@ -243,14 +255,16 @@ p + p {
 }
 
 .service-card--soon {
-  background: #f2f4f3;
-  border-color: #d9dedb;
-  opacity: 0.9;
+  background: #f4f6f5;
+  border: 1px solid #cfd6d2;
+  border-left: 3px solid #b8c4be;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+  opacity: 0.95;
 }
 
 .service-card--soon:hover {
-  border-color: #d9dedb;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.035);
+  border-color: #c5ccc8;
+  box-shadow: 0 2px 14px rgba(0, 0, 0, 0.06);
 }
 
 .service-card--soon .service-card__title {
@@ -360,14 +374,12 @@ p + p {
 .container > .fade-in:nth-child(7) { transition-delay: 0.7s; }
 .container > .fade-in:nth-child(8) { transition-delay: 0.8s; }
 
-@media (max-width: 720px) {
+@media (max-width: 640px) {
   .service-grid {
     grid-template-columns: 1fr;
     gap: 18px;
   }
-}
 
-@media (max-width: 640px) {
   .container {
     width: 94%;
     margin: 18px auto 34px;
